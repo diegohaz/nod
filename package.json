@@ -1,9 +1,9 @@
 {
-  "name": "generator-nodule",
+  "name": "generator-nod",
   "version": "0.0.1",
   "description": "NodeJS modules generator with ES6 (Babel), Jest, Flow, Travis, Codecov, Documentation and more.",
-  "homepage": "https://github.com/diegohaz/nodule",
-  "repository": "diegohaz/nodule",
+  "homepage": "https://github.com/diegohaz/nod",
+  "repository": "diegohaz/nod",
   "main": "generators/app/index.js",
   "files": [
     "generators",

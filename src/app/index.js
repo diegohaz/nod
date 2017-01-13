@@ -26,7 +26,12 @@ export default class extends Generator {
   }
 
   getGitHubUsername = (): Promise<string> => new Promise((resolve) => {
-    this.user.github.username((err, username) => resolve(username))
+    // istanbul ignore next
+    try {
+      this.user.github.username((err, username) => resolve(username))
+    } catch (e) {
+      resolve('')
+    }
   })
 
   async prompting() {
@@ -81,10 +86,10 @@ export default class extends Generator {
       if (fs.statSync(templatePath(file)).isDirectory()) return
       this.fs.copy(templatePath(file), this.destinationPath(file))
       const contents: string = this.fs.read(this.destinationPath(file))
-        .replace(/https:\/\/github.com\/diegohaz\/nodule/g, this.answers.homepage)
+        .replace(/https:\/\/github.com\/diegohaz\/nod/g, this.answers.homepage)
         .replace(/https:\/\/github.com\/diegohaz/g, this.answers.authorUrl)
-        .replace(/diegohaz\/nodule/g, this.answers.repository)
-        .replace(/nodule/g, this.answers.name)
+        .replace(/diegohaz\/nod/g, this.answers.repository)
+        .replace(/generator-nod/g, this.answers.name)
         .replace(/hazdiego@gmail.com/g, this.answers.authorEmail)
         .replace(/diegohaz/g, this.answers.githubUsername)
         .replace(/Diego Haz/g, this.answers.authorName)
