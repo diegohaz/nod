@@ -25,12 +25,8 @@ export default class extends Generator {
     this.argument('appname', { type: String, required: false })
   }
 
-  getGitHubUsername = (): Promise<string> => new Promise((resolve, reject) => {
-    this.user.github.username((err, username) => {
-      // istanbul ignore next
-      if (err) return reject(err)
-      return resolve(username)
-    })
+  getGitHubUsername = (): Promise<string> => new Promise((resolve) => {
+    this.user.github.username((err, username) => resolve(username))
   })
 
   async prompting() {

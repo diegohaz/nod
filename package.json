@@ -1,12 +1,13 @@
 {
   "name": "generator-nodule",
   "version": "0.0.1",
-  "description": "Yeoman generator that generates a next generation generator with ES6, Jest, Flow and more.",
+  "description": "NodeJS modules generator with ES6 (Babel), Jest, Flow, Travis, Codecov, Documentation and more.",
   "homepage": "https://github.com/diegohaz/nodule",
   "repository": "diegohaz/nodule",
   "main": "generators/app/index.js",
   "files": [
-    "generators"
+    "generators",
+    "template"
   ],
   "author": {
     "name": "Diego Haz",
@@ -39,7 +40,18 @@
   "keywords": [
     "yeoman-generator",
     "generator",
-    "yeoman"
+    "yeoman",
+    "package",
+    "node",
+    "npm",
+    "es6",
+    "babel",
+    "jest",
+    "flow",
+    "flowtype",
+    "travis",
+    "codecov",
+    "documentation"
   ],
   "dependencies": {
     "glob": "^7.1.1",
