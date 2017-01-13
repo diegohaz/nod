@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "flowtype-errors"
+  ],
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "semi": [2, never],
+    "comma-dangle": 0,
+    "flowtype/union-intersection-spacing": [2, never],
+    "flowtype-errors/show-errors": 2
+  }
+}

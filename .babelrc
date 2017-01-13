@@ -1,0 +1,11 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "plugins": [
+    "add-module-exports",
+    "transform-flow-strip-types",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
+}
