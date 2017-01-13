@@ -1,9 +1,9 @@
 {
-  "name": "nodule",
+  "name": "generator-nod",
   "version": "0.0.1",
   "description": "My node module",
   "license": "MIT",
-  "repository": "diegohaz/nodule",
+  "repository": "diegohaz/nod",
   "main": "index.js",
   "author": {
     "name": "Diego Haz",
@@ -38,7 +38,7 @@
     "testEnvironment": "node"
   },
   "keywords": [
-    "nodule"
+    "generator-nod"
   ],
   "dependencies": {},
   "devDependencies": {
