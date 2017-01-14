@@ -6,8 +6,7 @@
   "repository": "diegohaz/nod",
   "main": "generators/app/index.js",
   "files": [
-    "generators",
-    "template"
+    "generators"
   ],
   "author": {
     "name": "Diego Haz",
@@ -31,9 +30,6 @@
     "postpublish": "git push --follow-tags"
   },
   "jest": {
-    "testPathDirs": [
-      "<rootDir>/src"
-    ],
     "testEnvironment": "node",
     "coverageDirectory": "<rootDir>/coverage"
   },
