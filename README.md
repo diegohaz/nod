@@ -5,6 +5,8 @@
 
 NodeJS module generator/boilerplate.
 
+<p align="center"><img src="https://cloud.githubusercontent.com/assets/3068563/21958520/77e4f45e-da97-11e6-9685-fe380a9cce3d.gif"></p>
+
 ## Features
 
 - [**Babel**](https://babeljs.io/) - Write next generation JavaScript today;
