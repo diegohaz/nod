@@ -1,7 +1,6 @@
 // @flow
 import _ from 'lodash'
 import fs from 'fs'
-import path from 'path'
 import glob from 'glob'
 import askName from 'inquirer-npm-name'
 import Generator from 'yeoman-generator'
@@ -75,16 +74,15 @@ export default class extends Generator {
   }
 
   async writing() {
-    const cwd = path.join(__dirname, '../../template')
+    const cwd = this.templatePath('nod')
     const ignore: string[] = ['**/.git/**', 'README.md']
     const files: string[] = glob.sync('**/*', { cwd, ignore, dot: true })
-    const templatePath = (...args: Array<string>): string => path.join(cwd, ...args)
 
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.answers)
 
     files.forEach((file: string) => {
-      if (fs.statSync(templatePath(file)).isDirectory()) return
-      this.fs.copy(templatePath(file), this.destinationPath(file))
+      if (fs.statSync(this.templatePath('nod', file)).isDirectory()) return
+      this.fs.copy(this.templatePath('nod', file), this.destinationPath(file))
       const contents: string = this.fs.read(this.destinationPath(file))
         .replace(/https:\/\/github.com\/diegohaz\/nod/g, this.answers.homepage)
         .replace(/https:\/\/github.com\/diegohaz/g, this.answers.authorUrl)

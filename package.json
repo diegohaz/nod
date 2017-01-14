@@ -6,8 +6,7 @@
   "repository": "diegohaz/nod",
   "main": "generators/app/index.js",
   "files": [
-    "generators",
-    "template"
+    "generators"
   ],
   "author": {
     "name": "Diego Haz",
