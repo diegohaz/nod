@@ -84,7 +84,6 @@ export default class extends Generator {
     const repository = 'https://github.com/diegohaz/nod'
     const { name: cwd } = tmp.dirSync()
     const spinner = new Spinner(chalk.gray(`%s cloning ${repository}...`))
-    this.log(spinner)
     spinner.start()
     await Clone(repository, cwd)
     spinner.stop()
