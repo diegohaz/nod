@@ -75,7 +75,6 @@
     "eslint-plugin-flowtype-errors": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.37.4",
-    "fs-extra": "^1.0.0",
     "jest-cli": "^18.1.0",
     "ncp": "^2.0.0",
     "yeoman-assert": "^2.2.2",
