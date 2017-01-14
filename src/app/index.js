@@ -5,6 +5,12 @@ import path from 'path'
 import glob from 'glob'
 import askName from 'inquirer-npm-name'
 import Generator from 'yeoman-generator'
+import tmp from 'tmp'
+import chalk from 'chalk'
+import { Clone } from 'nodegit'
+import { Spinner } from 'cli-spinner'
+
+Spinner.setDefaultSpinnerString(18)
 
 type answers = {
   name: string,
@@ -75,16 +81,22 @@ export default class extends Generator {
   }
 
   async writing() {
-    const cwd = path.join(__dirname, '../../template')
-    const ignore: string[] = ['**/.git/**', 'README.md']
-    const files: string[] = glob.sync('**/*', { cwd, ignore, dot: true })
-    const templatePath = (...args: Array<string>): string => path.join(cwd, ...args)
+    const repository = 'https://github.com/diegohaz/nod'
+    const { name: cwd } = tmp.dirSync()
+    const spinner = new Spinner(chalk.gray(`%s cloning ${repository}...`))
+    this.log(spinner)
+    spinner.start()
+    await Clone(repository, cwd)
+    spinner.stop()
+    const ignore = ['**/.git/**', 'README.md']
+    const files: Array<string> = glob.sync('**/*', { cwd, ignore, dot: true })
+    const repoPath = (...args): string => path.join(cwd, ...args)
 
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.answers)
 
     files.forEach((file: string) => {
-      if (fs.statSync(templatePath(file)).isDirectory()) return
-      this.fs.copy(templatePath(file), this.destinationPath(file))
+      if (fs.statSync(repoPath(file)).isDirectory()) return
+      this.fs.copy(repoPath(file), this.destinationPath(file))
       const contents: string = this.fs.read(this.destinationPath(file))
         .replace(/https:\/\/github.com\/diegohaz\/nod/g, this.answers.homepage)
         .replace(/https:\/\/github.com\/diegohaz/g, this.answers.authorUrl)
