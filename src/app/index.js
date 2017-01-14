@@ -6,11 +6,8 @@ import glob from 'glob'
 import askName from 'inquirer-npm-name'
 import Generator from 'yeoman-generator'
 import tmp from 'tmp'
-import chalk from 'chalk'
+import ora from 'ora'
 import { Clone } from 'nodegit'
-import { Spinner } from 'cli-spinner'
-
-Spinner.setDefaultSpinnerString(18)
 
 type answers = {
   name: string,
@@ -83,8 +80,7 @@ export default class extends Generator {
   async writing() {
     const repository = 'https://github.com/diegohaz/nod'
     const { name: cwd } = tmp.dirSync()
-    const spinner = new Spinner(chalk.gray(`%s cloning ${repository}...`))
-    spinner.start()
+    const spinner = ora(`Cloning ${repository} ...`).start()
     await Clone(repository, cwd)
     spinner.stop()
     const ignore = ['**/.git/**', 'README.md']
