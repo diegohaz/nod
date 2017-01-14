@@ -5,7 +5,7 @@ import assert from 'yeoman-assert'
 
 jest.mock('inquirer-npm-name', () => (prompt, inquirer) => inquirer.prompt(prompt))
 
-const templatePath = (...args) => path.join(__dirname, 'templates/nod', ...args)
+const templatePath = (...args) => path.join(__dirname, '../../template', ...args)
 
 const getTemplateFiles = () => {
   const ignore = ['**/.git/**', 'README.md']
