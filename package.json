@@ -22,12 +22,20 @@
     "build:clean": "del generators",
     "build:copy": "ncp src generators && del \"generators/**/*.test.js\"",
     "prebuild": "npm run build:clean && npm run build:copy",
-    "build": "babel src -d generators --ignore \"**/*.test.js\",\"**/templates/**\"",
+    "build": "babel src -d generators --ignore test.js,templates",
+    "build:watch": "npm-watch",
     "patch": "npm version patch && npm publish",
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
     "prepublish": "npm run lint && npm test && npm run build",
     "postpublish": "git push --follow-tags"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src"],
+      "extensions": "*",
+      "ignore": "test.js"
+    }
   },
   "jest": {
     "testEnvironment": "node",
