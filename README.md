@@ -44,7 +44,7 @@ $ npm run coverage # run tests with coverage and open it on browser
 $ npm run lint # lint code
 $ npm run docs # generate docs
 $ npm run build # generate docs and transpile code
-$ npm run build:watch # watch code changes and run build script
+$ npm run watch # watch code changes and run scripts automatically
 $ npm run patch # bump patch version and publish to npm e.g. 0.0.1
 $ npm run minor # bump minor version and publish to npm e.g. 0.1.0
 $ npm run major # bump major version and publish to npm e.g. 1.0.0

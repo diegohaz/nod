@@ -27,7 +27,7 @@
     "clean": "del dist",
     "prebuild": "npm run docs && npm run clean",
     "build": "babel src -d dist",
-    "build:watch": "npm-watch",
+    "watch": "npm-watch",
     "patch": "npm version patch && npm publish",
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
@@ -35,7 +35,9 @@
     "postpublish": "git push origin master --follow-tags"
   },
   "watch": {
-    "build": "src/**/*.js"
+    "test": "{src,test}",
+    "lint": "{src,test}",
+    "build": "src"
   },
   "jest": {
     "testRegex": "/test/.*",
