@@ -1,6 +1,6 @@
 {
   "name": "generator-nod",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "NodeJS modules generator with ES6 (Babel), Jest, Flow, Travis, Codecov, Documentation and more.",
   "homepage": "https://github.com/diegohaz/nod",
   "repository": "diegohaz/nod",
@@ -32,7 +32,9 @@
   },
   "watch": {
     "build": {
-      "patterns": ["src"],
+      "patterns": [
+        "src"
+      ],
       "extensions": "*",
       "ignore": "test.js"
     }
