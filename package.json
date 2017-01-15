@@ -25,13 +25,17 @@
     "flow": "flow check",
     "docs": "documentation readme src --section=API",
     "clean": "del dist",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run docs && npm run clean",
     "build": "babel src -d dist",
+    "build:watch": "npm-watch",
     "patch": "npm version patch && npm publish",
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
     "prepublish": "npm run lint && npm test && npm run build",
     "postpublish": "git push origin master --follow-tags"
+  },
+  "watch": {
+    "build": "src/**/*.js"
   },
   "jest": {
     "testRegex": "/test/.*",
@@ -57,6 +61,7 @@
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.37.4",
     "jest-cli": "^18.1.0",
+    "npm-watch": "^0.1.7",
     "opn-cli": "^3.1.0"
   }
 }
