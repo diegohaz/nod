@@ -35,8 +35,8 @@
     "postpublish": "git push origin master --follow-tags"
   },
   "watch": {
-    "test": "{src,test}",
-    "lint": "{src,test}",
+    "test": "{src,test}/*.js",
+    "lint": "{src,test}/*.js",
     "build": "src"
   },
   "jest": {
