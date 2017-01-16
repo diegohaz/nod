@@ -3,6 +3,9 @@ import fs from 'fs'
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 
+// eslint-disable-next-line no-undef
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
+
 jest.mock('inquirer-npm-name', () => (prompt, inquirer) => inquirer.prompt(prompt))
 
 const run = () => helpers.run(path.join(__dirname))
