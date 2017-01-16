@@ -42,7 +42,7 @@ export default class extends Generator {
       name: 'name',
       message: 'What do you want to name your module?',
       default: _.kebabCase(this.appname),
-      when: typeof this.options.name === 'undefined'
+      when: !this.options.name
     }, this)
 
     const props = await this.prompt([{

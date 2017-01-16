@@ -7,7 +7,7 @@ jest.mock('inquirer-npm-name', () => (prompt, inquirer) => inquirer.prompt(promp
 
 const run = () => helpers.run(path.join(__dirname))
 
-describe('nodule:app', () => {
+describe('app', () => {
   const files = [
     'src/index.js',
     'test/index.js',
@@ -30,7 +30,7 @@ describe('nodule:app', () => {
   })
 
   it('copies files passing name as argument', async () => {
-    const dir = await run().withArguments(['generator-node'])
+    const dir = await run().withOptions({ name: 'generator-node' })
     assert.file(files)
     const pkg = JSON.parse(fs.readFileSync(path.join(dir, 'package.json')))
     expect(pkg.name).toBe('generator-node')
