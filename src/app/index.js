@@ -38,12 +38,15 @@ export default class extends Generator {
   })
 
   async prompting() {
-    const { name = this.options.name } = await askName({
-      name: 'name',
-      message: 'What do you want to name your module?',
-      default: _.kebabCase(this.appname),
-      when: !this.options.name
-    }, this)
+    let name = this.options.name
+    if (!name) {
+      const obj = await askName({
+        name: 'name',
+        message: 'What do you want to name your module?',
+        default: _.kebabCase(this.appname)
+      }, this)
+      name = obj.name
+    }
 
     const props = await this.prompt([{
       name: 'description',
