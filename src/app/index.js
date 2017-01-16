@@ -25,7 +25,7 @@ export default class extends Generator {
 
   constructor(...args: Array<any>) {
     super(...args)
-    this.argument('appname', { type: String, required: false })
+    this.argument('name', { type: String, required: false })
   }
 
   getGitHubUsername = (): Promise<string> => new Promise((resolve) => {
@@ -38,10 +38,11 @@ export default class extends Generator {
   })
 
   async prompting() {
-    const { name } = await askName({
+    const { name = this.options.name } = await askName({
       name: 'name',
       message: 'What do you want to name your module?',
-      default: _.kebabCase(this.options.appname || this.appname),
+      default: _.kebabCase(this.appname),
+      when: typeof this.options.name === 'undefined'
     }, this)
 
     const props = await this.prompt([{
