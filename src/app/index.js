@@ -9,7 +9,7 @@ import tmp from 'tmp'
 import ora from 'ora'
 import { Clone } from 'nodegit'
 
-type answers = {
+type Answers = {
   name: string,
   description: string,
   githubUsername: string,
@@ -21,9 +21,9 @@ type answers = {
 }
 
 export default class extends Generator {
-  answers: answers
+  answers: Answers
 
-  constructor(...args: Array<*>) {
+  constructor(...args: Array<any>) {
     super(...args)
     this.argument('appname', { type: String, required: false })
   }
