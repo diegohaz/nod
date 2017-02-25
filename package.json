@@ -24,7 +24,7 @@
     "lint": "eslint src test",
     "flow": "flow check",
     "docs": "documentation readme src --section=API",
-    "clean": "del dist",
+    "clean": "rimraf dist",
     "prebuild": "npm run docs && npm run clean",
     "build": "babel src -d dist",
     "watch": "npm-watch",
@@ -50,12 +50,11 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
-    "babel-jest": "^18.0.0",
+    "babel-jest": "^19.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-preset-env": "^1.1.8",
     "babel-preset-stage-2": "^6.18.0",
-    "del-cli": "^0.2.1",
-    "documentation": "^4.0.0-beta.18",
+    "documentation": "4.0.0-beta.18",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-flowtype": "^2.29.2",
@@ -64,6 +63,7 @@
     "flow-bin": "^0.40.0",
     "jest-cli": "^19.0.1",
     "npm-watch": "^0.1.7",
-    "opn-cli": "^3.1.0"
+    "opn-cli": "^3.1.0",
+    "rimraf": "^2.6.1"
   }
 }
