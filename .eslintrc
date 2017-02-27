@@ -12,8 +12,7 @@
     "jest": true
   },
   "rules": {
-    "semi": [2, never],
-    "comma-dangle": 0,
+    "semi": [2, "never"],
     "flowtype-errors/show-errors": 2
   }
 }
