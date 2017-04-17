@@ -56,6 +56,8 @@ $ npm run major # bump major version and publish to npm e.g. 1.0.0
 
 - [**styled-tools**](https://github.com/diegohaz/styled-tools) - Module using `flow-typed`, targeted to browser.
 - [**styled-theme**](https://github.com/diegohaz/styled-theme) - Module with `gh-pages`, targeted to browser.
+- [**webpack-blocks-happypack**](https://github.com/diegohaz/webpack-blocks-happypack) - Uses Jest snapshots.
+- [**webpack-blocks-split-vendor**](https://github.com/diegohaz/webpack-blocks-split-vendor) - Has peer dependencies.
 
 ## API
 
