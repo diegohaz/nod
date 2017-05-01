@@ -52,12 +52,12 @@ $ npm run major # bump major version and publish to npm e.g. 1.0.0
 
 ## Built with Nod
 
-*You can use those modules as a reference when creating yours. If you have built something with Nod, send a PR (try to write a helpful description for Nod users).*
+_You can use those modules as a reference when creating yours. If you have built something with Nod, send a PR (try to write a helpful description for Nod users)._
 
-- [**styled-tools**](https://github.com/diegohaz/styled-tools) - Module using `flow-typed`, targeted to browser.
-- [**styled-theme**](https://github.com/diegohaz/styled-theme) - Module with `gh-pages`, targeted to browser.
-- [**webpack-blocks-happypack**](https://github.com/diegohaz/webpack-blocks-happypack) - Uses Jest snapshots.
-- [**webpack-blocks-split-vendor**](https://github.com/diegohaz/webpack-blocks-split-vendor) - Has peer dependencies.
+-   [**styled-tools**](https://github.com/diegohaz/styled-tools) - Module using `flow-typed`, targeted to browser.
+-   [**styled-theme**](https://github.com/diegohaz/styled-theme) - Module with `gh-pages`, targeted to browser.
+-   [**webpack-blocks-happypack**](https://github.com/diegohaz/webpack-blocks-happypack) - Uses Jest snapshots.
+-   [**webpack-blocks-split-vendor**](https://github.com/diegohaz/webpack-blocks-split-vendor) - Has peer dependencies.
 
 [More examples](https://github.com/search?l=Markdown&q=generator-nod-2196F3&type=Code)
 
