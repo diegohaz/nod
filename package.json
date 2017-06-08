@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "diegohaz/nod",
   "main": "index.js",
+  "jsnext:main": "src/index.js",
   "author": {
     "name": "Diego Haz",
     "email": "hazdiego@gmail.com",
