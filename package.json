@@ -66,7 +66,7 @@
     "glob": "^7.1.1",
     "inquirer-npm-name": "^2.0.0",
     "lodash": "^4.17.4",
-    "nodegit": "^0.16.0",
+    "nodegit": "^0.20.2",
     "ora": "^0.4.1",
     "tmp": "^0.0.31",
     "yeoman-generator": "^1.0.1"
