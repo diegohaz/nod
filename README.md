@@ -12,6 +12,7 @@ NodeJS module generator/boilerplate.
 -   [**Babel**](https://babeljs.io/) - Write next generation JavaScript today;
 -   [**Jest**](https://facebook.github.io/jest) - JavaScript testing framework used by Facebook;
 -   [**ESLint**](http://eslint.org/) - Make sure you are writing a quality code;
+-   [**Prettier**](https://prettier.io/) - Enforces a consistent style by parsing your code and re-printing it;
 -   [**Flow**](https://flowtype.org/) - A static type checker for JavaScript used heavily within Facebook;
 -   [**Travis CI**](https://travis-ci.org) - Automate tests and linting for every push or pull request;
 -   [**Documentation**](http://documentation.js.org/) - A documentation system so good, you'll actually write documentation.
