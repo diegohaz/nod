@@ -6,7 +6,6 @@
     "plugin:flowtype/recommended"
   ],
   "plugins": [
-    "prettier",
     "flowtype",
     "flowtype-errors"
   ],
