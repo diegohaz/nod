@@ -13,7 +13,7 @@ const run = () => helpers.run(path.join(__dirname))
 describe('app', () => {
   const files = [
     'src/index.js',
-    'test/index.js',
+    'test/index.test.js',
     '.babelrc',
     '.editorconfig',
     '.eslintrc',
@@ -22,7 +22,6 @@ describe('app', () => {
     '.travis.yml',
     'LICENSE',
     'README.md',
-    'index.js',
     'package.json',
     'yarn.lock'
   ]
