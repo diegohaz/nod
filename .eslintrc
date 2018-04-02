@@ -2,7 +2,7 @@
   "parser": "babel-eslint",
   "extends": [
     "airbnb-base",
-    "prettier",
+    "plugin:prettier/recommended",
     "plugin:flowtype/recommended"
   ],
   "plugins": [
@@ -14,14 +14,6 @@
     "jest": true
   },
   "rules": {
-    "flowtype-errors/show-errors": "error",
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "semi": false,
-        "trailingComma": "all"
-      }
-    ]
+    "flowtype-errors/show-errors": "error"
   }
 }

@@ -1,8 +1,8 @@
-import sayHello from '../src'
+import sayHello from "../src";
 
-describe('sayHello', () => {
-  it('returns hello', () => {
-    expect(sayHello()).toBe('Hello, Haz!')
-    expect(sayHello('foo')).toBe('Hello, foo!')
-  })
-})
+describe("sayHello", () => {
+  it("returns hello", () => {
+    expect(sayHello()).toBe("Hello, Haz!");
+    expect(sayHello("foo")).toBe("Hello, foo!");
+  });
+});
