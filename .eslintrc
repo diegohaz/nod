@@ -3,7 +3,8 @@
   "extends": [
     "airbnb-base",
     "plugin:prettier/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:flowtype/recommended",
+    "prettier/flowtype"
   ],
   "plugins": [
     "flowtype",
