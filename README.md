@@ -75,12 +75,13 @@ _You can use those modules as a reference when creating yours. If you have built
 #### Table of Contents
 
 -   [sayHello](#sayhello)
+    -   [Parameters](#parameters)
 
 ### sayHello
 
 This function says hello.
 
-**Parameters**
+#### Parameters
 
 -   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Some name to say hello for.
 
