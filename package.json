@@ -17,7 +17,7 @@
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
-    "lint": "eslint src test",
+    "lint": "eslint .",
     "flow": "flow check",
     "docs": "documentation readme src --section=API",
     "postdocs": "git add README.md",
@@ -28,9 +28,6 @@
     "preversion": "npm run lint && npm test && npm run build",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags"
-  },
-  "jest": {
-    "testEnvironment": "node"
   },
   "husky": {
     "hooks": {
