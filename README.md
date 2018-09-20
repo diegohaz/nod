@@ -59,11 +59,11 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
 
 ## Removing stuff
 
-### Flow
+<details><summary><strong>Flow</strong></summary>
 
 1. Delete `.flowconfig` file.
 
-2. Find all occurrences of `flow` in `package.json` and remove scripts and dependencies:
+2. Remove `flow` from `package.json`:
 
     ```diff
     "scripts": {
@@ -127,6 +127,33 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
     ```
 
 5. Run `yarn`.
+
+</details>
+
+<details><summary><strong>Documentation</strong></summary>
+
+1. Remove `documentation` from `package.json`:
+
+```diff
+"scripts": {
+  "test": "jest",
+- "docs": "documentation readme src --section=API",
+- "postdocs": "git add README.md",
+  "clean": "rimraf dist",
+- "prebuild": "npm run docs && npm run clean",
++ "prebuild": "npm run clean",
+  "build": "babel src -d dist",
+},
+"devDependencies": {
+  "@babel/cli": "^7.1.0",
+- "documentation": "^8.0.0",
+  "eslint": "^5.6.0",
+}
+```
+
+2. Run `yarn`.
+
+</details>
 
 ## Built with Nod
 
