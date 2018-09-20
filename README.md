@@ -193,7 +193,7 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
     
 5. Update `.eslintrc` with these settings:
 
-    ```diff
+    ```json
       "settings": {
         "import/resolver": {
           "node": true,
