@@ -57,6 +57,77 @@ $ npm publish
 
 It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.md file.
 
+## Removing stuff
+
+### Flow
+
+1. Delete `.flowconfig` file.
+
+2. Find all occurrences of `flow` in `package.json` and remove scripts and dependencies:
+
+    ```diff
+    "scripts": {
+      "test": "jest",
+    - "flow": "flow check",
+      "clean": "rimraf dist",
+    - "flowbuild": "flow-copy-source src dist",
+    - "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    + "prebuild": "npm run docs && npm run clean",
+      "build": "babel src -d dist",
+    },
+    "devDependencies": {
+      "@babel/preset-env": "^7.1.0",
+    - "@babel/preset-flow": "^7.0.0",
+      "eslint-config-prettier": "^3.0.1",
+    - "eslint-plugin-flowtype": "^2.50.0",
+    - "eslint-plugin-flowtype-errors": "^3.5.1",
+      "eslint-plugin-prettier": "^2.6.2",
+    - "flow-bin": "^0.81.0",
+    - "flow-copy-source": "^2.0.2",
+      "husky": "^1.0.0-rc.14"
+    }
+    ```
+
+3. Remove `flow` from `.babelrc`:
+
+    ```diff
+    {
+      "presets": [
+        "@babel/preset-env",
+    -   "@babel/preset-flow"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties"
+      ]
+    }
+    ```
+    
+4. Remove `flow` from `.eslintrc`:
+
+    ```diff
+    {
+      "parser": "babel-eslint",
+      "extends": [
+        "airbnb-base",
+    -   "plugin:flowtype/recommended",
+        "plugin:prettier/recommended",
+    -   "prettier/flowtype"
+      ],
+      "plugins": [
+    -   "flowtype",
+    -   "flowtype-errors"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+    -   "flowtype-errors/show-errors": "error"
+      }
+    }
+    ```
+
+5. Run `yarn`.
+
 ## Built with Nod
 
 _You can use those modules as a reference when creating yours. If you have built something with Nod, send a PR (try to write a helpful description for Nod users)._
