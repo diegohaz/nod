@@ -134,22 +134,22 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
 
 1. Remove `documentation` from `package.json`:
 
-```diff
-"scripts": {
-  "test": "jest",
-- "docs": "documentation readme src --section=API",
-- "postdocs": "git add README.md",
-  "clean": "rimraf dist",
-- "prebuild": "npm run docs && npm run clean",
-+ "prebuild": "npm run clean",
-  "build": "babel src -d dist",
-},
-"devDependencies": {
-  "@babel/cli": "^7.1.0",
-- "documentation": "^8.0.0",
-  "eslint": "^5.6.0",
-}
-```
+    ```diff
+    "scripts": {
+      "test": "jest",
+    - "docs": "documentation readme src --section=API",
+    - "postdocs": "git add README.md",
+      "clean": "rimraf dist",
+    - "prebuild": "npm run docs && npm run clean",
+    + "prebuild": "npm run clean",
+      "build": "babel src -d dist",
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.1.0",
+    - "documentation": "^8.0.0",
+      "eslint": "^5.6.0",
+    }
+    ```
 
 2. Run `yarn`.
 
