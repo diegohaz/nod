@@ -136,7 +136,7 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
 1. Install dependencies:
 
     ```sh
-    yarn add -D @babel/preset-typescript @types/jest eslint-import-resolver-typescript eslint-plugin-typescript typescript  typescript-eslint-parser
+    yarn add -D @babel/preset-typescript @types/jest eslint-import-resolver-typescript eslint-plugin-typescript jest-config typescript typescript-eslint-parser
     ```
     
 2. Update `package.json`:
@@ -148,7 +148,7 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
     -   "lint": "eslint .",
     +   "lint": "eslint . --ext js,ts,tsx",
     -   "build": "babel src -d dist",
-    +   "build": "tsc --emitDeclarationOnly && babel src -d dist",
+    +   "build": "tsc --emitDeclarationOnly && babel src -d dist -x .js,.ts,.tsx",
       },
       "lint-staged": {
         "*.js": [
@@ -170,7 +170,6 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
         "moduleResolution": "node",
         "jsx": "react",
         "strict": true,
-        "allowJs": true,
         "declaration": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
@@ -192,29 +191,29 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
       ]
     ```
     
-5. Update `.eslintrc`:
+5. Update `.eslintrc` with these settings:
 
     ```diff
-    + "settings": {
-    +   "import/resolver": {
-    +     "node": true,
-    +     "eslint-import-resolver-typescript": true
-    +   }
-    + },
-    + "overrides": [
-    +   {
-    +     "files": ["**/*.ts", "**/*.tsx"],
-    +     "parser": "typescript-eslint-parser",
-    +     "plugins": [
-    +       "typescript"
-    +     ],
-    +     "rules": {
-    +       "no-undef": "off",
-    +       "no-unused-vars": "off",
-    +       "no-restricted-globals": "off"
-    +     }
-    +   }
-    + ]
+      "settings": {
+        "import/resolver": {
+          "node": true,
+          "eslint-import-resolver-typescript": true
+        }
+      },
+      "overrides": [
+        {
+          "files": ["**/*.ts", "**/*.tsx"],
+          "parser": "typescript-eslint-parser",
+          "plugins": [
+            "typescript"
+          ],
+          "rules": {
+            "no-undef": "off",
+            "no-unused-vars": "off",
+            "no-restricted-globals": "off"
+          }
+        }
+      ]
     ```
     
 6. Create `jest.config.js`:
