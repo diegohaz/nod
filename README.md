@@ -151,7 +151,8 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
     +   "build": "tsc --emitDeclarationOnly && babel src -d dist -x .js,.ts,.tsx",
       },
       "lint-staged": {
-        "*.js": [
+    -   "*.js": [
+    +   "*.{js,ts,tsx}": [
     -     "eslint --fix",
     +     "eslint --fix --ext js,ts,tsx",
           "git add"
