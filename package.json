@@ -11,7 +11,8 @@
     "url": "https://github.com/diegohaz"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "test": "jest",
