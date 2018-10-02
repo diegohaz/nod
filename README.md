@@ -177,11 +177,7 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "stripInternal": true
-      },
-      "exclude": [
-        "node_modules",
-        "dist"
-      ]
+      }
     }
     ```
     
