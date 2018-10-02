@@ -142,7 +142,7 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
 2. Update `package.json`:
 
     ```diff
-    + "types": "dist/ts",
+    + "types": "dist/ts/src",
       "scripts": {
     +   "type-check": "tsc --noEmit",
     -   "lint": "eslint .",
@@ -178,8 +178,9 @@ It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.m
         "noUnusedParameters": true,
         "stripInternal": true
       },
-      "include": [
-        "src"
+      "exclude": [
+        "node_modules",
+        "dist"
       ]
     }
     ```
