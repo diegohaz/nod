@@ -55,7 +55,7 @@ $ npm version patch|minor|major
 $ npm publish
 ```
 
-It'll automatically run `test`, `lint`, `docs`, `build` and generate CHANGELOG.md file.
+It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`, and push commits and tags to the remote repository.
 
 ## Removing stuff
 
