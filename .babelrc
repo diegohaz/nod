@@ -1,4 +1,16 @@
 {
-  "presets": ["es2015", "stage-2"],
-  "plugins": ["transform-flow-strip-types"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": 6
+        }
+      }
+    ],
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
 }
