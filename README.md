@@ -193,12 +193,6 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
 5.  Update `.eslintrc` with these settings:
 
     ```json
-      "settings": {
-        "import/resolver": {
-          "node": true,
-          "eslint-import-resolver-typescript": true
-        }
-      },
       "overrides": [
         {
           "files": ["**/*.ts", "**/*.tsx"],
