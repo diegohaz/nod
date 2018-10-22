@@ -165,6 +165,7 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
     ```json
     {
       "compilerOptions": {
+        "baseUrl": ".",
         "outDir": "dist/ts",
         "target": "esnext",
         "module": "esnext",
