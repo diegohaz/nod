@@ -227,8 +227,6 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
     };
     ```
 
-7.  Run `yarn`.
-
 </details>
 
 ## API
