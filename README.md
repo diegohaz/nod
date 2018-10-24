@@ -136,7 +136,7 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
 1. Install dependencies:
 
     ```sh
-    yarn add -D @babel/preset-typescript @types/jest eslint-import-resolver-typescript eslint-plugin-typescript typescript typescript-eslint-parser
+    yarn add -D @babel/preset-typescript @types/jest eslint-plugin-typescript typescript typescript-eslint-parser
     ```
 
 2.  Update `package.json`:
@@ -165,7 +165,6 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
     ```json
     {
       "compilerOptions": {
-        "baseUrl": ".",
         "outDir": "dist/ts",
         "target": "esnext",
         "module": "esnext",
@@ -195,8 +194,9 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
     ```json
       "settings": {
         "import/resolver": {
-          "node": true,
-          "eslint-import-resolver-typescript": true
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
         }
       },
       "overrides": [
