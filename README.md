@@ -136,7 +136,7 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
 1. Install dependencies:
 
     ```sh
-    yarn add -D @babel/preset-typescript @types/jest eslint-plugin-typescript typescript typescript-eslint-parser
+    yarn add -D @babel/preset-typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
     ```
 
 2.  Update `package.json`:
@@ -202,9 +202,12 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
       "overrides": [
         {
           "files": ["**/*.ts", "**/*.tsx"],
-          "parser": "typescript-eslint-parser",
+          "parser": "@typescript-eslint/parser",
+          "parserOptions": {
+            "project": "./tsconfig.json"
+          },
           "plugins": [
-            "typescript"
+            "@typescript-eslint"
           ],
           "rules": {
             "no-undef": "off",
@@ -213,18 +216,6 @@ It'll automatically run `test`, `lint`, `docs`, `build`, generate `CHANGELOG.md`
           }
         }
       ]
-    ```
-
-6.  Create `jest.config.js`:
-
-    ```js
-    module.exports = {
-      moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
-      testMatch: ["**/?(*.)+(spec|test).(j|t)s?(x)"],
-      transform: {
-        "\\.(j|t)sx?$": "babel-jest"
-      }
-    };
     ```
 
 </details>
