@@ -5,7 +5,7 @@ module.exports = {
     },
     {
       displayName: "lint",
-      runner: "jest-runner-eslint",
+      runner: "eslint",
       testMatch: ["<rootDir>/**/*.js"]
     }
   ]
