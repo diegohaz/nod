@@ -8,7 +8,13 @@
 
 ## Install
 
-    $ npm install --save <%= name %>
+npm:
+
+    npm i <%= name %>
+
+Yarn:
+
+    yarn add <%= name %>
 
 ## Usage
 
