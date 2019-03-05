@@ -20,6 +20,7 @@ describe('app', () => {
     '.flowconfig',
     '.gitignore',
     '.travis.yml',
+    '.npmrc',
     'LICENSE',
     'README.md',
     'package.json',
