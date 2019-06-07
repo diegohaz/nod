@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "diegohaz/nod",
   "main": "dist/index.js",
+  "types": "dist/ts/src",
   "author": {
     "name": "Diego Haz",
     "email": "hazdiego@gmail.com",
@@ -18,14 +19,13 @@
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "postcoverage": "open-cli coverage/lcov-report/index.html",
-    "lint": "eslint .",
-    "flow": "flow check",
-    "docs": "documentation readme src --section=API",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext js,ts,tsx",
+    "docs": "documentation readme src/index.ts --section=API",
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
-    "flowbuild": "flow-copy-source src dist",
-    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
-    "build": "babel src -d dist",
+    "prebuild": "npm run docs && npm run clean",
+    "build": "tsc --emitDeclarationOnly && babel src -d dist -x .js,.ts,.tsx",
     "prerelease": "npm run lint && npm test && npm run build",
     "release": "standard-version",
     "postpublish": "git push origin master --follow-tags"
@@ -36,8 +36,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
+    "*.{js,ts,tsx}": [
+      "eslint --fix --ext js,ts,tsx",
       "git add"
     ]
   },
@@ -50,25 +50,25 @@
     "@babel/core": "7.4.5",
     "@babel/plugin-proposal-class-properties": "7.4.4",
     "@babel/preset-env": "7.4.5",
-    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-typescript": "7.3.3",
+    "@types/jest": "24.0.13",
+    "@typescript-eslint/eslint-plugin": "1.9.0",
+    "@typescript-eslint/parser": "1.9.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.8.0",
     "documentation": "11.0.0",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "4.3.0",
-    "eslint-plugin-flowtype": "3.9.1",
-    "eslint-plugin-flowtype-errors": "4.1.0",
     "eslint-plugin-import": "2.17.3",
     "eslint-plugin-prettier": "3.1.0",
-    "flow-bin": "0.100.0",
-    "flow-copy-source": "2.0.6",
     "husky": "2.4.0",
     "jest": "24.8.0",
     "lint-staged": "8.2.0",
     "open-cli": "5.0.0",
     "prettier": "1.18.0",
     "rimraf": "2.6.3",
-    "standard-version": "6.0.1"
+    "standard-version": "6.0.1",
+    "typescript": "3.5.1"
   }
 }
