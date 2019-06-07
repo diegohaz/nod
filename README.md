@@ -16,7 +16,7 @@ NodeJS module generator/boilerplate.
 -   [**Flow**](https://flowtype.org/) - A static type checker for JavaScript used heavily within Facebook.
 -   [**Travis CI**](https://travis-ci.org) - Automate tests and linting for every push or pull request.
 -   [**Documentation**](http://documentation.js.org/) - A documentation system so good, you'll actually write documentation.
--   [**Conventional Changelog**](https://github.com/conventional-changelog/conventional-changelog) - Generate a changelog from git metadata.
+-   [**Standard Version**](https://github.com/conventional-changelog/standard-version) - Automate versioning and CHANGELOG generation.
 
 ## Install
 
@@ -51,7 +51,7 @@ $ npm run build # generate docs and transpile code
 ### Publish
 
 ```sh
-$ npm version patch|minor|major
+$ npm release
 $ npm publish
 ```
 
