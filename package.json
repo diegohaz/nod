@@ -51,9 +51,9 @@
     "@babel/plugin-proposal-class-properties": "7.4.4",
     "@babel/preset-env": "7.4.5",
     "@babel/preset-typescript": "7.3.3",
-    "@types/jest": "24.0.13",
-    "@typescript-eslint/eslint-plugin": "1.9.0",
-    "@typescript-eslint/parser": "1.9.0",
+    "@types/jest": "24.0.15",
+    "@typescript-eslint/eslint-plugin": "1.10.3-alpha.13",
+    "@typescript-eslint/parser": "1.10.3-alpha.13",
     "babel-eslint": "10.0.2",
     "babel-jest": "24.8.0",
     "documentation": "11.0.1",
@@ -69,6 +69,6 @@
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "standard-version": "6.0.1",
-    "typescript": "3.5.1"
+    "typescript": "3.5.2"
   }
 }
